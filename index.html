@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>VIEWSITE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="primary-header">
+      <nav class="navbar container">
+        <a href="" class="logo">VIEWSITE.COM</a>
+        <div class="conten">
+          <a href="index.html">Home</a>
+          <a href="disney.html">Disney</a>
+          <a href="falcon.html">Falcon</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="body" style="margin-top: 7.5rem">
+      <div class="about-section">
+        <img src="https://media.licdn.com/dms/image/C4D12AQH21EqeCo-a9g/article-cover_image-shrink_600_2000/0/1641196676174?e=2147483647&v=beta&t=RJJ7p02on_00ZN3xJ34teFMVDOjHYBvOw_35hpp9tDw" alt="" style="width: 100%; height: auto;">
+      </div>
+
+      <div class="tulisan">
+        <h1>Pengertian Film</h1>
+        <p>Film (bahasa Inggris: movie, juga dikenal sebagai gambar hidup, film teater atau foto bergerak)
+           adalah serangkaian gambar diam, yang ketika ditampilkan pada layar akan menciptakan ilusi gambar bergerak 
+           yang dikarenakan efek fenomena phi. Ilusi optik ini memaksa penonton untuk melihat gerakan berkelanjutan antar objek
+            yang berbeda secara cepat dan berturut-turut. Proses pembuatan film adalah gabungan dari seni dan industri. Sebuah film dapat
+             dibuat dengan memotret adegan sungguhan dengan kamera film; memotret gambar atau model "miniatur" menggunakan teknik animasi tradisional;
+              dengan CGI dan animasi komputer; atau dengan kombinasi beberapa teknik yang ada dan efek visual lainnya.</p>
+
+        <p>
+          Seorang penulis naskah akan menulis sebuah naskah, yang berisi tentang cerita yang akan difilmkan dan kata-kata yang akan diucapkan artis. Kemudian seorang produser akan menyewa orang untuk bekerja pada film tersebut dan mendapatkan uang yang akan dibutuhkan untuk membayar para artis dan peralatan. Produser biasanya mendapatkan uang dengan meminjamnya dari sebuah bank atau dengan mencari investor untuk dipinjami uang untuk pembuatan film. Beberapa produser bekerja untuk sebuah studio film dan yang lainnya bekerja secara independen (mereka tidak bekerja untuk studio film).
+
+Artis dan sutradara membaca naskah untuk mengetahui apa yang harus dikatakan dan apa yang harus dilakukan. Kemudian sutradara memberitahu artis apa yang harus dilakukan dan seorang kameramen akan mengambil gambarnya dengan kamera film.
+
+Ketika film terselesaikan, seorang editor meletakan gambar secara bersama-sama yang akan disusun untuk membentuk keseluruhan cerita dengan durasi tertentu. Editor suara dan musik akan merekam beberapa musik dan nyanyian dan menggabungkannya ke dalam gambar film. Setelah selesai, banyak salinan yang dibuat dan ditaruh ke sebuah gulungan film. kemudian gulungan film dikirim ke bioskop-bioskop. Sebuah mesin elektrik yang disebut proyektor akan mengeluarkan sinar melewati gulungan film yang diputar dan gambarnya akan muncul di layar besar untuk dinikmati penonton.
+        </p>
+      </div>
+
+      </div>
+
+      <footer style="background-color: black; width: 100%; margin-top: 3rem;">
+        <div>
+          <p style="color: aliceblue; margin: auto;">WebTugas &copy kelompok 3 well</p>
+        </div>
+      </footer>
+
+      <script>
+        const isScrolling = () => {
+          const headerE1 = document.querySelector(".primary-header");
+          let windowPosition = window.scrollY > 50;
+          headerE1.classList.toggle("active", windowPosition);
+        };
+        window.addEventListener("scroll", isScrolling);
+
+        function myFunction() {
+          document.getElementById("mydropdown").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+          if (!event.target.matches(".dropbtn")) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+              }
+            }
+          }
+        };
+
+        let loadMoreBtn = document.querySelector("#load-more");
+        let currentItem = 3;
+
+        loadMoreBtn.onclick = () => {
+          let boxes = [
+            ...document.querySelectorAll(".container .box-container .box"),
+          ];
+          for (var i = currentItem; i < currentItem + 3; i++) {
+            boxes[i].style.display = "inline-block";
+          }
+          currentItem += 3;
+
+          if (currentItem >= boxes.length) {
+            loadMoreBtn.style.display = "none";
+          }
+        };
+      </script>
+  </body>
+</html>

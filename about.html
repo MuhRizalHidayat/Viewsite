@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>VIEWSITE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="primary-header">
+      <nav class="navbar container">
+        <a href="" class="logo">VIEWSITE.COM</a>
+        <div class="conten">
+          <a href="index.html">Home</a>
+          <a href="disney.html">Disney</a>
+          <a href="falcon.html">Falcon</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="body" style="margin-top: 7.5rem">
+      <div class="about-section">
+        <img src="https://i.pinimg.com/originals/a4/37/ec/a437ec4b69bd06ba83c5a3b01c185bfd.jpg" alt="" style="width: 100%; height: auto;">
+      </div>
+
+      <div class="tulisan">
+        <h1>viewsite.com</h1>
+        <p>Kamu pencinta film? Banyak film yang berkualitas dan layak dinikmati bersama-sama, namun kadang kita kecewa pada kualitas film karena cuma mengandalkan referensi dari sinopsis seadanya. Maka, munculnya rating film punya pengaruh yang cukup kuat untuk memberikan persepsi pada orang yang belum menonton film tertentu.
+            Untuk kamu yang mencari rekomendasi film-film berkualitas, beberapa situs rating film terkenal telah menyediakan rekomendasi. Rating tersebut tentu berdasarkan hasil review dari para penonton dan juga kritikus film.
+        </p>
+
+        <p>
+          Nah viewsite menjadi salah satu situs yang cocok bagi kamu yang sering mencari rekomendasi film dari internet. Viesite bisa memberikan beragam rekomendasi film terbaru dan yang pastinya film rekomendasi dari viewsite adalah film terbaik ya sob. Mau film Indonesia? atau film dari luar negeri nih? viewsite jelas bisa kamu andalkan. Maka dari itu percayakanlah viewsite menjadi situs rekomendasifilm anda.
+          <p>Jangan lupa ikuti kami di Instagram @viewsite.com dan berlangganan di youtube chanel kami ViewSiteWell.</p>
+        </p>
+      </div>
+
+      </div>
+
+      <footer style="background-color: black; width: 100%; margin-top: 3rem;">
+        <div>
+          <p style="color: aliceblue; margin: auto;">WebTugas &copy kelompok 3 well</p>
+        </div>
+      </footer>
+
+      <script>
+        const isScrolling = () => {
+          const headerE1 = document.querySelector(".primary-header");
+          let windowPosition = window.scrollY > 50;
+          headerE1.classList.toggle("active", windowPosition);
+        };
+        window.addEventListener("scroll", isScrolling);
+
+        function myFunction() {
+          document.getElementById("mydropdown").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+          if (!event.target.matches(".dropbtn")) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
+              }
+            }
+          }
+        };
+
+        let loadMoreBtn = document.querySelector("#load-more");
+        let currentItem = 3;
+
+        loadMoreBtn.onclick = () => {
+          let boxes = [
+            ...document.querySelectorAll(".container .box-container .box"),
+          ];
+          for (var i = currentItem; i < currentItem + 3; i++) {
+            boxes[i].style.display = "inline-block";
+          }
+          currentItem += 3;
+
+          if (currentItem >= boxes.length) {
+            loadMoreBtn.style.display = "none";
+          }
+        };
+      </script>
+  </body>
+</html>
